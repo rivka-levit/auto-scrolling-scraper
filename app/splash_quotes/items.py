@@ -18,7 +18,7 @@ def clean(q):
         str: cleaned string.
     """
 
-    return q[0].replace('\201c', '').replace('\u201d', '').replace('\u00e9', '')
+    return q[0].replace('\u201c', '').replace('\u201d', '').replace('\u00e9', '')
 
 
 class SplashQuotesItem(scrapy.Item):

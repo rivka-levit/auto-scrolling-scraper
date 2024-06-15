@@ -13,7 +13,6 @@ class ScrollingSpider(scrapy.Spider):
     name = "scrolling"
     allowed_domains = ["quotes.toscrape.com", "172.24.0.2", "splash"]
     start_urls = ["https://quotes.toscrape.com/scroll"]
-    lua_script = auto_scroll_lua
 
     def start_requests(self):
         for url in self.start_urls:
@@ -23,7 +22,7 @@ class ScrollingSpider(scrapy.Spider):
                 callback=self.parse,
                 args={
                     'wait': 1,
-                    'lua_source': self.lua_script
+                    'lua_source': auto_scroll_lua
                 }
             )
 
